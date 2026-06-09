@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Perfil</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body>
+
+<div class="content-page">
+
+    <div class="page-card">
+
+        <h1>👤 Mi Perfil</h1>
+
+        <div class="profile-info">
+
+            <div class="profile-item">
+
+                <strong>Usuario:</strong><br>
+                {{ usuario.username }}
+
+            </div>
+
+            <div class="profile-item">
+
+                <strong>Estado:</strong><br>
+                Activo
+
+            </div>
+
+            <div class="profile-item">
+
+                <strong>Acceso:</strong><br>
+                Usuario Registrado
+
+            </div>
+
+        </div>
+
+        <a
+        href="{{ url_for('dashboard') }}"
+        class="btn-back">
+
+            ← Volver al Dashboard
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

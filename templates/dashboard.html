@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body class="dashboard-body">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            🔐 LOGIN APP
+
+        </div>
+        <ul class="sidebar-menu">
+
+            <li class="active">
+
+                <a href="{{ url_for('dashboard') }}">
+
+                    🏠 Dashboard
+
+                </a>
+
+            </li>
+
+            <li onclick="abrirPerfil()">
+
+                👤 Perfil
+
+            </li>
+
+            <li onclick="abrirConfig()">
+
+                ⚙️ Configuración
+
+            </li>
+
+        </ul>
+
+        <div class="sidebar-footer">
+
+            <a
+            href="{{ url_for('logout') }}"
+            class="sidebar-logout">
+
+                🚪 Cerrar Sesión
+
+            </a>
+
+        </div>
+
+    </aside>
+
+    <!-- CONTENIDO -->
+
+    <main class="main-content">
+
+        <!-- CABECERA -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h2>
+                    Panel Principal
+                </h2>
+
+                <p>
+                    Bienvenido al sistema
+                </p>
+
+            </div>
+
+            <div class="user-badge">
+
+                👤 {{ usuario.username }}
+
+            </div>
+
+        </header>
+
+        <!-- TARJETA BIENVENIDA -->
+
+        <section class="welcome-panel">
+
+            <h1>
+                ¡Bienvenido {{ usuario.username }}!
+            </h1>
+
+            <p>
+                Has iniciado sesión correctamente.
+            </p>
+
+        </section>
+
+        <!-- ESTADÍSTICAS -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👤
+                </div>
+
+                <h3>
+                    Usuario
+                </h3>
+
+                <span>
+                    {{ usuario.username }}
+                </span>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🔒
+                </div>
+
+                <h3>
+                    Seguridad
+                </h3>
+
+                <span>
+                    Activa
+                </span>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🗄️
+                </div>
+
+                <h3>
+                    Base de Datos
+                </h3>
+
+                <span>
+                    SQLite
+                </span>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Estado
+                </h3>
+
+                <span>
+                    En línea
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+<!-- ========================= -->
+<!-- VENTANA PERFIL -->
+<!-- ========================= -->
+
+<div id="perfilModal" class="modal-overlay">
+
+    <div class="modal-window">
+
+        <span
+        class="close-btn"
+        onclick="cerrarPerfil()">
+
+            ✖
+
+        </span>
+
+        <h2>
+
+            👤 Perfil de Usuario
+
+        </h2>
+
+        <hr>
+
+        <p>
+
+            <strong>Usuario:</strong>
+
+            {{ usuario.username }}
+
+        </p>
+
+        <p>
+
+            <strong>Estado:</strong>
+
+            Activo
+
+        </p>
+
+        <p>
+
+            <strong>Acceso:</strong>
+
+            Usuario Registrado
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ========================= -->
+<!-- VENTANA CONFIGURACION -->
+<!-- ========================= -->
+
+<div id="configModal" class="modal-overlay">
+
+    <div class="modal-window">
+
+        <span
+        class="close-btn"
+        onclick="cerrarConfig()">
+
+            ✖
+
+        </span>
+
+        <h2>
+
+            ⚙️ Configuración
+
+        </h2>
+
+        <hr>
+
+        <form
+        action="{{ url_for('configuracion') }}"
+        method="POST">
+
+            <div class="form-group">
+
+                <label>
+
+                    Contraseña Actual
+
+                </label>
+
+                <input
+                type="password"
+                name="actual"
+                class="form-control"
+                required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+
+                    Nueva Contraseña
+
+                </label>
+
+                <input
+                type="password"
+                name="nueva"
+                class="form-control"
+                required>
+
+            </div>
+
+            <button
+            type="submit"
+            class="btn-login">
+
+                Guardar Cambios
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+
+function abrirPerfil(){
+
+    document.getElementById(
+        "perfilModal"
+    ).style.display = "flex";
+}
+
+function cerrarPerfil(){
+
+    document.getElementById(
+        "perfilModal"
+    ).style.display = "none";
+}
+
+function abrirConfig(){
+
+    document.getElementById(
+        "configModal"
+    ).style.display = "flex";
+}
+
+function cerrarConfig(){
+
+    document.getElementById(
+        "configModal"
+    ).style.display = "none";
+}
+
+</script>
+
+</body>
+
+</html>

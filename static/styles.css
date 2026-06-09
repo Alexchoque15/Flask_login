@@ -1,0 +1,1028 @@
+/* ===== GENERAL ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    min-height:100vh;
+    background:linear-gradient(
+        135deg,
+        #020617,
+        #0f172a,
+        #1e3a8a
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ===== CONTENEDOR ===== */
+
+.auth-container{
+
+    width:100%;
+    max-width:500px;
+
+    padding:25px;
+}
+/* ===== TARJETA ===== */
+
+.auth-card{
+    background:#ffffff;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.30);
+
+    animation:show .8s ease;
+}
+
+/* ===== LOGO ===== */
+
+.logo{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo h1{
+    color:#0f172a;
+    font-size:32px;
+    font-weight:700;
+}
+
+.logo p{
+    color:#64748b;
+    margin-top:5px;
+}
+
+.logo-icon{
+
+    width:90px;
+    height:90px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #60a5fa
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+
+    font-size:38px;
+
+    margin-bottom:20px;
+
+    box-shadow:
+        0 10px 25px rgba(37,99,235,.30);
+}
+
+/* ===== LABELS ===== */
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#1e293b;
+}
+
+/* ===== INPUTS ===== */
+
+.form-control{
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    border:1px solid #cbd5e1;
+
+    background:#f8fafc;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+.form-control:focus{
+
+    outline:none;
+
+    background:white;
+
+    border-color:#2563eb;
+
+    box-shadow:
+        0 0 15px rgba(37,99,235,.20);
+}
+
+.form-control:focus{
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:
+    0 0 10px rgba(37,99,235,.25);
+}
+
+/* ===== BOTON LOGIN ===== */
+
+.btn-login{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color:white;
+
+    font-weight:700;
+
+    font-size:16px;
+
+    transition:.3s;
+}
+
+.btn-login:hover{
+
+    transform:translateY(-2px);
+
+    background:linear-gradient(
+        135deg,
+        #1d4ed8,
+        #1e40af
+    );
+}
+
+
+.btn-login:hover{
+    background:#1d4ed8;
+}
+
+/* ===== BOTON REGISTRO ===== */
+
+.btn-register{
+
+    display:block;
+
+    width:100%;
+
+    text-align:center;
+
+    margin-top:15px;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    border:2px solid #2563eb;
+
+    color:#2563eb;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.btn-register:hover{
+
+    background:#2563eb;
+
+    color:white;
+}
+
+
+.btn-register:hover{
+    background:#2563eb;
+    color:white;
+}
+
+/* ===== ALERTAS ===== */
+
+.alert-error{
+    background:#fee2e2;
+    color:#b91c1c;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+/* ===== DASHBOARD ===== */
+
+.dashboard-card{
+    background:white;
+    padding:50px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.30);
+}
+
+.dashboard-card h1{
+    color:#0f172a;
+}
+
+.dashboard-card p{
+    color:#64748b;
+    margin:15px 0;
+}
+
+.btn-logout{
+    display:inline-block;
+    background:#dc2626;
+    color:white;
+    padding:12px 20px;
+    border-radius:10px;
+    text-decoration:none;
+}
+
+.btn-logout:hover{
+    background:#b91c1c;
+}
+
+/* ===== ANIMACION ===== */
+
+@keyframes show{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===== TARJETA PREMIUM ===== */
+
+.auth-card{
+    background: rgba(255,255,255,0.97);
+
+    backdrop-filter: blur(12px);
+
+    border-radius: 25px;
+
+    padding: 45px;
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.25),
+        0 0 40px rgba(37,99,235,.15);
+
+    transition: .4s;
+}
+
+.auth-card:hover{
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.30),
+        0 0 50px rgba(37,99,235,.25);
+
+}
+
+/* ========================= */
+/* DASHBOARD */
+/* ========================= */
+
+.dashboard-body{
+
+    display:flex;
+
+    min-height:100vh;
+
+    background:#f1f5f9;
+
+    align-items:flex-start;
+}
+
+/* NAVBAR */
+
+.dashboard-navbar{
+
+    background:#0f172a;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 40px;
+
+    color:white;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.3);
+}
+
+.logo-dashboard{
+
+    font-size:22px;
+
+    font-weight:bold;
+}
+
+.user-info{
+
+    font-size:15px;
+}
+
+/* CONTENIDO */
+
+.dashboard-container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:40px 0;
+}
+
+/* BIENVENIDA */
+
+.welcome-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    margin-bottom:30px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
+}
+
+.welcome-card h1{
+
+    color:#0f172a;
+
+    margin-bottom:10px;
+}
+
+.welcome-card p{
+
+    color:#64748b;
+}
+
+/* GRID */
+
+.cards-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+/* TARJETAS */
+
+.info-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.15);
+}
+
+.info-card:hover{
+
+    transform:translateY(-8px);
+}
+
+.icon{
+
+    font-size:45px;
+
+    margin-bottom:15px;
+}
+
+.info-card h3{
+
+    color:#0f172a;
+
+    margin-bottom:10px;
+}
+
+.info-card p{
+
+    color:#64748b;
+}
+
+/* BOTON */
+
+.logout-container{
+
+    margin-top:35px;
+
+    text-align:center;
+}
+
+.btn-logout{
+
+    display:inline-block;
+
+    padding:14px 30px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:bold;
+
+    background:
+    linear-gradient(
+        135deg,
+        #dc2626,
+        #b91c1c
+    );
+
+    transition:.3s;
+}
+
+.btn-logout:hover{
+
+    transform:translateY(-3px);
+}
+
+/* ========================= */
+/* DASHBOARD MODERNO */
+/* ========================= */
+
+.dashboard-body{
+
+    display:flex;
+
+    min-height:100vh;
+
+    background:#f1f5f9;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:260px;
+    height:100vh;
+
+    background:#0f172a;
+
+    display:flex;
+    flex-direction:column;
+
+    color:white;
+}
+
+.sidebar-logo{
+
+    padding:25px;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    text-align:center;
+
+    border-bottom:1px solid #1e293b;
+}
+
+.sidebar-menu{
+
+    list-style:none;
+
+    padding:15px;
+
+    margin:0;
+
+    flex:1; /* Empuja el footer abajo */
+}
+
+.sidebar-menu li{
+
+    padding:14px 18px;
+
+    margin-bottom:8px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.sidebar-menu li:hover{
+
+    background:#1e293b;
+}
+
+.sidebar-footer{
+
+    padding:20px;
+
+    border-top:1px solid #1e293b;
+}
+
+.sidebar-footer{
+
+    padding:20px;
+
+    border-top:1px solid #1e293b;
+}
+
+.sidebar-logout{
+
+    display:block;
+
+    background:#dc2626;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    text-align:center;
+}
+
+/* CONTENIDO */
+
+.main-content{
+
+    margin-left:260px;
+
+    width:calc(100% - 260px);
+
+    padding-top:5px;
+
+    padding-left:25px;
+
+    padding-right:25px;
+
+    padding-bottom:25px;
+}
+
+/* TOPBAR */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:15px;
+}
+
+.user-badge{
+
+    background:white;
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+/* BIENVENIDA */
+
+.welcome-panel{
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    margin-bottom:30px;
+}
+
+/* TARJETAS */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+}
+
+.stat-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.stat-card:hover{
+
+    transform:translateY(-5px);
+}
+
+.stat-icon{
+
+    font-size:40px;
+
+    margin-bottom:15px;
+}
+
+.stat-card h3{
+
+    color:#0f172a;
+
+    margin-bottom:10px;
+}
+
+.stat-card span{
+
+    color:#64748b;
+
+    font-size:18px;
+}
+
+.content-page{
+
+    padding:40px;
+
+    margin-left:260px;
+}
+
+.page-card{
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.1);
+}
+
+.success-box{
+
+    background:#dcfce7;
+
+    color:#166534;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+}
+
+.sidebar-menu a{
+
+    color:white;
+
+    text-decoration:none;
+
+    display:block;
+
+    width:100%;
+}
+
+.sidebar-menu a:hover{
+
+    color:white;
+}
+
+/* ========================= */
+/* VENTANAS FLOTANTES */
+/* ========================= */
+
+.content-page{
+
+    margin-left:260px;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #f1f5f9,
+        #e2e8f0
+    );
+}
+
+.page-card{
+
+    width:100%;
+
+    max-width:650px;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:40px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.15);
+
+    animation:fadeIn .4s ease;
+
+    position:relative;
+}
+
+.page-card h1{
+
+    color:#0f172a;
+
+    margin-bottom:20px;
+
+    text-align:center;
+}
+
+.page-card hr{
+
+    margin:20px 0;
+}
+
+/* DATOS */
+
+.profile-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.profile-item{
+
+    background:#f8fafc;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    border-left:4px solid #2563eb;
+}
+
+/* MENSAJES */
+
+.success-box{
+
+    background:#dcfce7;
+
+    color:#166534;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+}
+
+.error-box{
+
+    background:#fee2e2;
+
+    color:#b91c1c;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+}
+
+/* BOTON VOLVER */
+
+.btn-back{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    background:#2563eb;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.btn-back:hover{
+
+    background:#1d4ed8;
+}
+
+/* ANIMACION */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+}
+
+/* ========================= */
+/* ENLACES MENU */
+/* ========================= */
+
+.sidebar-menu a{
+
+    color:white;
+
+    text-decoration:none;
+
+    display:block;
+
+    width:100%;
+}
+
+.sidebar-menu a:hover{
+
+    color:white;
+}
+
+/* ========================= */
+/* MODALES */
+/* ========================= */
+
+.modal-overlay{
+
+    display:none;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:
+    rgba(0,0,0,.60);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+}
+
+.modal-window{
+
+    width:90%;
+
+    max-width:600px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    position:relative;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.30);
+
+    animation:modalShow .3s ease;
+}
+
+.modal-window h2{
+
+    color:#0f172a;
+
+    margin-bottom:15px;
+}
+
+.close-btn{
+
+    position:absolute;
+
+    right:20px;
+
+    top:15px;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    color:#64748b;
+}
+
+.close-btn:hover{
+
+    color:#dc2626;
+}
+
+@keyframes modalShow{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.90);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+    }
+}
